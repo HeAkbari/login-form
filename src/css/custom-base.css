@@ -1,0 +1,6 @@
+@layer base {
+    .bg-gray-150 {
+        background-color: rgb(165, 97, 42)
+    }
+
+}

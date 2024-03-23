@@ -7,7 +7,53 @@
     <link rel="stylesheet" href="../../dist/css/tailwind.css" />
   </head>
   <body class="bg-blue-200">
-    <h1 class="font-bold text-red-500"> Hello tailwind css</h1>
-    <h1 class="font-bold text-red-100"> Hello tailwind css</h1>
+    <div class="container mx-auto bg-gray-500" x-data="{activeLink:1}">
+      <div class="flex-start">
+        <a
+          class="p-2 hover:text-white cursor-pointer"
+          :class="{'bg-slate-100': activeLink==1 }"
+          x-on:click="activeLink=1"
+        >
+          link1
+        </a>
+        <a
+          class="p-2 hover:text-white cursor-pointer"
+          :class="{'bg-slate-100': activeLink==2 }"
+          x-on:click="activeLink=2"
+        >
+          link2
+        </a>
+        <a
+          class="p-2 hover:text-white cursor-pointer"
+          :class="{'bg-slate-100': activeLink==3 }"
+          x-on:click="activeLink=3"
+        >
+          link3
+        </a>
+      </div>
+      <div x-cloak x-show="activeLink>0">
+        <div class="bg-slate-100" :class="{'hidden': activeLink!=1 }">
+          <h4>link1</h4>
+          <p class="">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="bg-slate-100" :class="{'hidden': activeLink!=2}">
+          <h4>link2</h4>
+          <p class="">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="bg-slate-100" :class="{'hidden': activeLink!=3}">
+          <h4>link3</h4>
+          <p class="">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
